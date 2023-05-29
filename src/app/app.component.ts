@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'pokedex-promo-2023';
+  title = 'pokedex';
+
+  constructor() {
+    setTimeout(() => {
+      this.title = 'Pokedex de fou furieux';
+    }, 5000);
+  }
 }
