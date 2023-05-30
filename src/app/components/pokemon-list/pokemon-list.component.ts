@@ -8,17 +8,14 @@ import { Component } from '@angular/core';
 export class PokemonListComponent {
   newPokemonName = 'pikachu';
 
-  isButtonDisabled = true;
+  isButtonDisabled = false;
+
+  hasPokemonBeenAdded = false;
 
   constructor() {
   }
 
-  onChangeDisabledButtonClick() {
-    this.isButtonDisabled = !this.isButtonDisabled;
-  }
-
-  onInputChange($event: Event) {
-    const inputElt = $event.target! as HTMLInputElement;
-    this.newPokemonName = inputElt.value;
+  onAddPokemonBtnClick() {
+    this.hasPokemonBeenAdded = true;
   }
 }

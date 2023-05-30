@@ -1,13 +1,21 @@
 <h2 class="title">{{ newPokemonName }}</h2>
 
-<input type="text" (input)="onInputChange($event)" class="form-control" />
-<input type="text" [(ngModel)]="newPokemonName" class="form-control" />
+<div class="row">
+  <div class="col-9">
+    <input type="text" [(ngModel)]="newPokemonName" class="form-control" />
+  </div>
+  <div class="col">
+    <button class="btn btn-primary" [disabled]="isButtonDisabled" (click)="onAddPokemonBtnClick()">Ajouter</button>
+  </div>
+</div>
 
-<button class="btn btn-primary mt-2" [disabled]="isButtonDisabled">my button</button>
+<div class="mt-3" *ngIf="hasPokemonBeenAdded">
+  {{ newPokemonName }} a été ajouté !
+</div>
 
-<button class="btn btn-primary mt-2" (click)="onChangeDisabledButtonClick()">change disabled</button>
+<div class="mt-5">
+  <pokedex-pokemon-item />
+  <pokedex-pokemon-item />
+  <pokedex-pokemon-item />
+</div>
 
-
-<pokedex-pokemon-item />
-<pokedex-pokemon-item />
-<pokedex-pokemon-item />
