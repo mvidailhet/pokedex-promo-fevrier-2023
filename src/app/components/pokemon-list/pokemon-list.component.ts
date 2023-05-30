@@ -19,6 +19,6 @@ export class PokemonListComponent {
 
   onInputChange($event: Event) {
     const inputElt = $event.target! as HTMLInputElement;
-    console.log(inputElt.value);
+    this.newPokemonName = inputElt.value;
   }
 }

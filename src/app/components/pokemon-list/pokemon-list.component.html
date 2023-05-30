@@ -1,11 +1,11 @@
 <h2 class="title">{{ newPokemonName }}</h2>
 
-<input type="text" (input)="onInputChange($event)" [(ngModel)]="newPokemonName" class="form-control" />
+<input type="text" (input)="onInputChange($event)" class="form-control" />
+<input type="text" [(ngModel)]="newPokemonName" class="form-control" />
 
 <button class="btn btn-primary mt-2" [disabled]="isButtonDisabled">my button</button>
 
 <button class="btn btn-primary mt-2" (click)="onChangeDisabledButtonClick()">change disabled</button>
-
 
 
 <pokedex-pokemon-item />
