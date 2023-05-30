@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+type PokemonGender = 'male' | 'female';
+
 @Component({
   selector: 'pokedex-pokemon-list',
   templateUrl: './pokemon-list.component.html',
@@ -12,13 +14,13 @@ export class PokemonListComponent {
 
   hasPokemonBeenAdded = false;
 
-  isPokemonMale = false;
+  pokemonGender?: PokemonGender;
 
   constructor() {
   }
 
   onAddPokemonBtnClick() {
     this.hasPokemonBeenAdded = true;
-    this.isPokemonMale = Math.random() > 0.5;
+    this.pokemonGender = Math.random() > 0.5 ? 'male' : 'female';
   }
 }

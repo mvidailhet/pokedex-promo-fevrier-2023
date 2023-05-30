@@ -15,7 +15,7 @@
   <div class="alert alert-danger">Aucun pokémon n'a été ajouté</div>
 </ng-template>
 
-<h2 class="pokemon" [ngStyle]="{ backgroundColor: isPokemonMale ? 'blue' : 'pink', color: isPokemonMale ? 'white': 'black' }" *ngIf="hasPokemonBeenAdded">{{ newPokemonName }}</h2>
+<h2 class="pokemon" [ngClass]="{ 'is-male' : pokemonGender === 'male', 'is-female': pokemonGender === 'female' }" *ngIf="hasPokemonBeenAdded">{{ newPokemonName }}</h2>
 
 <div class="mt-5">
   <pokedex-pokemon-item />
