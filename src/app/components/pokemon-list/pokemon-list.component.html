@@ -2,7 +2,11 @@
 
 <input type="text" [(ngModel)]="title" class="form-control" />
 
-<button class="btn btn-primary">test</button>
+<button class="btn btn-primary mt-2" [disabled]="isButtonDisabled">my button</button>
+
+<button class="btn btn-primary mt-2" (click)="onChangeDisabledButtonClick()">change disabled</button>
+
+
 
 <pokedex-pokemon-item />
 <pokedex-pokemon-item />

@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class PokemonListComponent {
   title = 'pokedex';
+
+  isButtonDisabled = true;
+
+  constructor() {
+  }
+
+  onChangeDisabledButtonClick() {
+    this.isButtonDisabled = !this.isButtonDisabled;
+  }
 }
