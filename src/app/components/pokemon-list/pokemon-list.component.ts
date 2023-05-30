@@ -29,5 +29,7 @@ export class PokemonListComponent {
       name: this.newPokemonName,
       gender: Math.random() > 0.5 ? 'male' : 'female'
     });
+
+    this.newPokemonName = '';
   }
 }
