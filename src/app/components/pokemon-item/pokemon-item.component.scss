@@ -1,6 +1,7 @@
 :host {
   border-bottom: 1px solid black;
   display: block;
+  --name-weight: normal;
 
   &:last-child {
     border-bottom: none;
@@ -15,4 +16,8 @@
 .is-female {
   background-color: pink;
   color: black;
+}
+
+.pokemon-name {
+  font-weight: var(--name-weight);
 }
