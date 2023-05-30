@@ -18,14 +18,16 @@ export class PokemonListComponent {
   constructor() {
   }
 
-  onAddPokemonBtnClick() {
-    if (this.pokemons.find((pokemon) => pokemon.name === this.newPokemonName)) return;
-
+  notifyPokemonHasBeenAdded() {
     this.hasPokemonBeenAdded = true;
 
     setTimeout(() => {
       this.hasPokemonBeenAdded = false;
     }, 2000);
+  }
+
+  onAddPokemonBtnClick() {
+    this.notifyPokemonHasBeenAdded();
 
     this.pokemons.push({
       name: this.newPokemonName,
@@ -35,9 +37,7 @@ export class PokemonListComponent {
     this.newPokemonName = '';
   }
 
-  OnDeletePokemon(name: string) {
-    this.pokemons = this.pokemons.filter((pokemon) => {
-      return pokemon.name !== name;
-    });
+  OnDeletePokemon(index: number, name: string) {
+    this.pokemons.splice(index, 1);
   }
 }

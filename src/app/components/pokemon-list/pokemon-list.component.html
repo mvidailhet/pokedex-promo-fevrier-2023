@@ -3,7 +3,13 @@
     <input type="text" [(ngModel)]="newPokemonName" class="form-control" />
   </div>
   <div class="col">
-    <button class="btn btn-primary" [disabled]="isButtonDisabled" (click)="onAddPokemonBtnClick()">Ajouter</button>
+    <button
+      class="btn btn-primary"
+      [disabled]="isButtonDisabled"
+      (click)="onAddPokemonBtnClick()"
+    >
+      Ajouter
+    </button>
   </div>
 </div>
 
@@ -12,9 +18,11 @@
 </div>
 
 <div class="mt-3">
-  <pokedex-pokemon-item [name]="pokemon.name" [gender]="pokemon.gender" (onDelete)="OnDeletePokemon($event)" *ngFor="let pokemon of pokemons">
+  <pokedex-pokemon-item
+    [name]="pokemon.name"
+    [gender]="pokemon.gender"
+    (onDelete)="OnDeletePokemon(myIndex, $event)"
+    *ngFor="let pokemon of pokemons; let myIndex = index"
+  >
   </pokedex-pokemon-item>
 </div>
-
-
-
