@@ -1,6 +1,6 @@
-<h2 class="title">coucou</h2>
+<h2 class="title">{{ newPokemonName }}</h2>
 
-<input type="text" [(ngModel)]="title" class="form-control" />
+<input type="text" (input)="onInputChange($event)" [(ngModel)]="newPokemonName" class="form-control" />
 
 <button class="btn btn-primary mt-2" [disabled]="isButtonDisabled">my button</button>
 

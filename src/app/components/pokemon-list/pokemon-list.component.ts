@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./pokemon-list.component.scss']
 })
 export class PokemonListComponent {
-  title = 'pokedex';
+  newPokemonName = 'pikachu';
 
   isButtonDisabled = true;
 
@@ -15,5 +15,10 @@ export class PokemonListComponent {
 
   onChangeDisabledButtonClick() {
     this.isButtonDisabled = !this.isButtonDisabled;
+  }
+
+  onInputChange($event: Event) {
+    const inputElt = $event.target! as HTMLInputElement;
+    console.log(inputElt.value);
   }
 }
