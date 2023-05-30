@@ -16,11 +16,19 @@ export class PokemonListComponent {
 
   pokemonGender?: PokemonGender;
 
+  pokemons = ['pikachu', 'bulbasaur', 'charmander', 'squirtle'];
+
   constructor() {
   }
 
   onAddPokemonBtnClick() {
     this.hasPokemonBeenAdded = true;
+
+    setTimeout(() => {
+      this.hasPokemonBeenAdded = false;
+    }, 2000);
+
     this.pokemonGender = Math.random() > 0.5 ? 'male' : 'female';
+    this.pokemons.push(this.newPokemonName);
   }
 }
