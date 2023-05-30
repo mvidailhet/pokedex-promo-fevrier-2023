@@ -12,10 +12,13 @@ export class PokemonListComponent {
 
   hasPokemonBeenAdded = false;
 
+  isPokemonMale = false;
+
   constructor() {
   }
 
   onAddPokemonBtnClick() {
     this.hasPokemonBeenAdded = true;
+    this.isPokemonMale = Math.random() > 0.5;
   }
 }
