@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { PokemonGender } from "src/app/models/pokemon";
 
 @Component({
@@ -9,4 +9,10 @@ import { PokemonGender } from "src/app/models/pokemon";
 export class PokemonItemComponent {
   @Input() name?: string;
   @Input() gender?: PokemonGender;
+  @Output() onDelete = new EventEmitter<string>();
+
+  OnDeleteBtnClick() {
+    console.log('delete');
+    this.onDelete.emit(this.name);
+  }
 }

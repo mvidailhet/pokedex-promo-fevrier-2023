@@ -32,4 +32,10 @@ export class PokemonListComponent {
 
     this.newPokemonName = '';
   }
+
+  OnDeletePokemon(name: string) {
+    this.pokemons = this.pokemons.filter((pokemon) => {
+      return pokemon.name !== name;
+    });
+  }
 }
