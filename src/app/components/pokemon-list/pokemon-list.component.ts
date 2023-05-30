@@ -19,6 +19,8 @@ export class PokemonListComponent {
   }
 
   onAddPokemonBtnClick() {
+    if (this.pokemons.find((pokemon) => pokemon.name === this.newPokemonName)) return;
+
     this.hasPokemonBeenAdded = true;
 
     setTimeout(() => {
