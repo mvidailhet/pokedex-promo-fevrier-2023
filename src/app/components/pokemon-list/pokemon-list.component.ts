@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-
-type PokemonGender = 'male' | 'female';
+import { Pokemon } from 'src/app/models/pokemon';
 
 @Component({
   selector: 'pokedex-pokemon-list',
@@ -8,15 +7,13 @@ type PokemonGender = 'male' | 'female';
   styleUrls: ['./pokemon-list.component.scss']
 })
 export class PokemonListComponent {
-  newPokemonName = 'pikachu';
+  newPokemonName = '';
 
   isButtonDisabled = false;
 
   hasPokemonBeenAdded = false;
 
-  pokemonGender?: PokemonGender;
-
-  pokemons = ['pikachu', 'bulbasaur', 'charmander', 'squirtle'];
+  pokemons: Pokemon[] = [];
 
   constructor() {
   }
@@ -28,7 +25,9 @@ export class PokemonListComponent {
       this.hasPokemonBeenAdded = false;
     }, 2000);
 
-    this.pokemonGender = Math.random() > 0.5 ? 'male' : 'female';
-    this.pokemons.push(this.newPokemonName);
+    this.pokemons.push({
+      name: this.newPokemonName,
+      gender: Math.random() > 0.5 ? 'male' : 'female'
+    });
   }
 }
