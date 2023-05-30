@@ -9,9 +9,13 @@
   </div>
 </div>
 
-<div class="mt-3" *ngIf="hasPokemonBeenAdded">
+<div class="mt-3" *ngIf="hasPokemonBeenAdded; else noPokemon">
   {{ newPokemonName }} a été ajouté !
 </div>
+
+<ng-template #noPokemon>
+  <div class="alert alert-danger">Aucun pokémon n'a été ajouté</div>
+</ng-template>
 
 <div class="mt-5">
   <pokedex-pokemon-item />
