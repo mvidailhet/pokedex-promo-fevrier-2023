@@ -7,10 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'pokedex';
-
-  constructor() {
-    setTimeout(() => {
-      this.title = 'Pokedex de fou furieux';
-    }, 5000);
-  }
 }
